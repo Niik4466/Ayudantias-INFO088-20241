@@ -30,7 +30,8 @@ Array Modificado:
 [11 ,50 ,65 ,25 ,48 ,41 ,74 ,52 ,73 ,39, 83]
  0   1   2   3   4   5   6   7   8   9   10
 
-Para lograr esto, podemos validar si el elemento A[0] es menor que A[n-1]. De no ser ese el caso, los intercambiamos
+Para lograr esto, podemos validar si el elemento A[(n-1)/2] es menor que A[n-1]. De no ser ese el caso, los intercambiamos
+Luego, comprobamos si A[0] es menor que A[n-1]. De no ser ese el caso, los intercambiamos
 Posteriormente verificamos si A[0] es menor que A[(n-1)/2]. De no ser ese el caso, los intercambiamos
 
 Una vez hayamos hecho este proceso, el elemento alojado en A[(n-1)/2] será un valor cercano a la mediana
