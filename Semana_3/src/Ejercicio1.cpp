@@ -51,9 +51,9 @@ using namespace std;
 #define MIN 10  //Valor minimo de los números aleatorios
 #define MAX 101 //Valor máximo de los números aleatorios
 
-void imprimeArray(int* A, int n);
-void intercambiar(int* A, int i, int j);
-int mediana(int* A, int ini, int med, int fin);
+void imprimeArray(int *Vec, int n);
+void intercambiar(int *Vec, int a, int b);
+int mediana(int* A, int n);
 
 int main(){
     
