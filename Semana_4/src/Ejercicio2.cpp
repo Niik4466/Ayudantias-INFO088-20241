@@ -5,12 +5,10 @@ Creen un algoritmo que: dada la Matriz de carácteres aleatorios, busque una pal
 Para esto, primero deben inicializar su matriz y llenarla de carácteres aleatorios. Esto se hace utilizando código ascii y una transformación de entero a carácter
 https://elcodigoascii.com.ar
 
-Luego deben codificar la función encuentraPalabra(char** A)
+Luego deben codificar la función booleana encuentraPalabra(char** A)
 Esta función debe recorrer cada caracter del arreglo "palabra" y comprobar si existe en el arreglo,
 De ser ese el caso, va a mover ese caracter a su posición correspondiente en la primera fila de la Matriz.
-
-Para finalizar, codifiquen la función booleana encuentraPalabra, la cual recorre linealmente la primera fila del arreglo A y comprueba si
-la palabra encontrada coincide con la buscada.
+Simultaneamente, la función debe retornar verdadero si encuentra la palabra o falso si no la encontró.
 
 */
 
@@ -28,8 +26,7 @@ const char palabra[5] = {'z', 'o', 'r', 'r', 'o'}; //palabra a buscar
 void intercambiaMatriz(char** A, int filaA, int columnaA, int filaB, int columnaB);
 void llenaMatriz(char** A);
 void imprimeMatriz(char** A);
-void encuentraPalabra(char** A);
-bool compruebaPalabra(char** A);
+bool encuentraPalabra(char** A);
 
 int main(){
 
