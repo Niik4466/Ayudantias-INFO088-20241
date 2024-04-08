@@ -1,4 +1,4 @@
-#include <iostream>
+r#include <iostream>
 #include <string.h>
 #include <cstdlib>
 #include <math.h>
@@ -35,8 +35,8 @@ int main(){
 
 void genPoints(float X[N], float Y[N]){
 	for (int i = 0; i < N; i++){
-		X[i] = (Q+1) - rand()%(Q+Q-1) + rand()/(float)RAND_MAX;
-		Y[i] = (Q+1) - rand()%(Q+Q-1) + rand()/(float)RAND_MAX;
+		X[i] = (Q-1) - rand()%(Q+Q) + rand()/(float)RAND_MAX;
+		Y[i] = (Q-1) - rand()%(Q+Q) + rand()/(float)RAND_MAX;
 	}
 }
 
