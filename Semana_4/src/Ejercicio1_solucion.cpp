@@ -14,8 +14,9 @@ Desafío: probarlo con un n muy grande y medir el tiempo que lleva generar el nu
 #include <random>
 using namespace std;
 
-#define MAX 101
-#define MIN 10
+#define MAX 101 //Valor máximo posible para el random
+#define MIN 10 //Valor mínimo posible para el random
+#define MULT 7 //Multiplicador del tamaño inicial
 
 //inicializamos las funciones
 int* aumentaCapacidad(int* A, int &n);
@@ -35,13 +36,13 @@ int main(){
     //creamos nuestro arreglo dinámico
     A = new int[n];
 
+    cout << "El tamaño del arreglo orignal es: " << n << " y se agregarán " << MULT*m << " elementos" << endl;
+
     //llenamos el arreglo dinámico hasta 10 veces su capacidad
-    for (int i = 0; i < 10*m; i++){
+    for (int i = 0; i < MULT*m; i++){
         
         //verificamos si la variable i se pasó de la capacidad
         if (i%n == 0 && i != 0){
-            cout << "El array lleno es: " << endl;
-            imprimeArray(A, n);
             cout << "Aumentando espacio..." << endl;
             aumentaCapacidad(A, n);
             cout << "Listo!!" << endl;
@@ -49,6 +50,8 @@ int main(){
         //agregamos un valor aleatorio al arreglo A
         A[i] = MIN + rand()%(MAX-MIN);
     }
+
+    cout << "El tamaño del arreglo final es: " << n << " y se agregaron " << MULT*m << " elementos" << endl;
 
     //eliminamos el Array dinamico que no estará en uso
     delete [] A;
