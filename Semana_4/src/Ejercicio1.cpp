@@ -1,16 +1,13 @@
 /*
 Codifique un programa que lea un entero n positivo y mayor que 0,
-con la variable n cree un arreglo A[0..n-1] y llenelo con datos aleatorios entre MIN y MAX
+con la variable, n cree un arreglo A[0..n-1] y llenelo con datos aleatorios entre MIN y MAX
+Con una variabble m guarde el tamaño de su arreglo inicial.
 
-ahora cree una función aumentaCapacidad(int* A, int &n) que aumente la capacidad de su arreglo al doble de casillas
+ahora cree una función aumentaCapacidad(int* A, int &n, const int m) que aumente la capacidad de su arreglo en m
 
-Mediante un ciclo for, siga llenando el arreglo hasta 10 veces su capacidad (10*n)
-RECOMENDACIÓN: crear una variable auxiliar m que guarde el valor inicial de n
+Mediante un ciclo for, siga llenando el arreglo hasta 10 veces su capacidad inicial(10*n)
 
-Para hacer la función aumentaCapacidad(int* A, int n), debe copiar todos los elementos de A en un arreglo auxiliar,
-luego debemos hacer que nuestro arreglo A, apunte a una nueva sucesión de elementos en memoria.
-Además debemos copiar los elementos de nuestro arreglo auxiliar al nuevo arreglo A.
-Para finalizar, duplicamos el valor n.
+Desafío: probarlo con un n muy grande y medir el tiempo que lleva generar el nuevo arreglo
 */
 
 #include <iostream>
