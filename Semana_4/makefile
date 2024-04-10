@@ -4,7 +4,7 @@ BINS=bin/prog
 all: clean problema
 
 problema:
-	$(CC) $(CFLAGS) -o bin/prog src/nuestra-respuesta-prueba-fromativa.cpp
+	$(CC) $(CFLAGS) -o bin/prog src/Ejercicio1_solucion.cpp
 
 clean:
 	@echo " [CLN] Removing binary files"

@@ -1,11 +1,11 @@
 /*
 Codifique un programa que lea un entero n positivo y mayor que 0,
-con la variable n cree un arreglo A[0..n-1] y llenelo con datos aleatorios entre MIN y MAX
+con la variable, n cree un arreglo A[0..n-1] y llenelo con datos aleatorios entre MIN y MAX
+Con una variabble m guarde el tamaño de su arreglo inicial.
 
-ahora cree una función aumentaCapacidad(int* A, int &n) que aumente la capacidad de su arreglo al doble de casillas
+ahora cree una función aumentaCapacidad(int* A, int &n, const int m) que aumente la capacidad de su arreglo en m
 
-Mediante un ciclo for, siga llenando el arreglo hasta 10 veces su capacidad (10*n)
-RECOMENDACIÓN: crear una variable auxiliar m que guarde el valor inicial de n
+Mediante un ciclo for, siga llenando el arreglo hasta 10 veces su capacidad inicial(10*n)
 
 Desafío: probarlo con un n muy grande y medir el tiempo que lleva generar el nuevo arreglo
 */
@@ -16,10 +16,10 @@ using namespace std;
 
 #define MAX 101 //Valor máximo posible para el random
 #define MIN 10 //Valor mínimo posible para el random
-#define MULT 7 //Multiplicador del tamaño inicial
+#define MULT 10 //Multiplicador del tamaño inicial
 
 //inicializamos las funciones
-int* aumentaCapacidad(int* A, int &n);
+int* aumentaCapacidad(int* A, int &n, const int m);
 void imprimeArray(int *Vec, const int n);
 
 int main(){
@@ -36,7 +36,7 @@ int main(){
     //creamos nuestro arreglo dinámico
     A = new int[n];
 
-    cout << "El tamaño del arreglo orignal es: " << n << " y se agregarán " << MULT*m << " elementos" << endl;
+    cout << "El tamaño del arreglo orignal es: " << n << " y se agregarán " << MULT*m-m << " elementos" << endl;
 
     //llenamos el arreglo dinámico hasta 10 veces su capacidad
     for (int i = 0; i < MULT*m; i++){
@@ -44,14 +44,14 @@ int main(){
         //verificamos si la variable i se pasó de la capacidad
         if (i%n == 0 && i != 0){
             cout << "Aumentando espacio..." << endl;
-            aumentaCapacidad(A, n);
+            aumentaCapacidad(A, n, m);
             cout << "Listo!!" << endl;
         }
         //agregamos un valor aleatorio al arreglo A
         A[i] = MIN + rand()%(MAX-MIN);
     }
 
-    cout << "El tamaño del arreglo final es: " << n << " y se agregaron " << MULT*m << " elementos" << endl;
+    cout << "El tamaño del arreglo final es: " << n << " y se agregaron " << MULT*m-m << " elementos" << endl;
 
     //eliminamos el Array dinamico que no estará en uso
     delete [] A;
@@ -59,14 +59,14 @@ int main(){
 }
 
 //creamos nuestra función aumentaCapacidad
-int* aumentaCapacidad(int* A, int &n){
+int* aumentaCapacidad(int* A, int &n, const int m){
 
     //creamos un nuevo puntero, este apuntará a la dirección de memoria apuntada por A
     //en este caso, el array dinamico inicial
     int* B = A;
 
     //hHacemos que A apunte a un nuevo array dinamico con el doble de memoria
-    A = new int[n*2];
+    A = new int[n+m];
 
     //copiamos los elementos del Array antiguo, al nuevo
     for (int i = 0; i < n; ++i){
@@ -74,7 +74,7 @@ int* aumentaCapacidad(int* A, int &n){
     }
 
     //duplicamos el valor n
-    n *= 2;
+    n += m;
 
     //retornamos el arreglo dinámico A
     return (A);
