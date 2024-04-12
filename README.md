@@ -2,11 +2,11 @@
 En este repositorio se suben los ejercicios y respuestas de las ayudantias.
 
 ## Instrucciones de ejecución
-Para ejecutar los códigos, primero deben compilarlo desde la carpeta "Semana_X" con el comando
+Para ejecutar los códigos, primero deben abrir la consola en la carpeta "Semana_X". Luego compilan el programa con el comando
 ```
 make
 ```
- luego, para ejecutarlo deben ingresar
+ finalmente para ejecutarlo deben ingresar
 ```
 ./bin/prog
 ```
