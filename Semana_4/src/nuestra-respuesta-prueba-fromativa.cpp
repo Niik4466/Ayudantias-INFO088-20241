@@ -1,4 +1,4 @@
-r#include <iostream>
+#include <iostream>
 #include <string.h>
 #include <cstdlib>
 #include <math.h>
@@ -16,7 +16,7 @@ void centroide(float X[N], float Y[N]);
 //agregada la función imprimeArray(int X[n])
 void imprimeArray(float X[N], float Y[N]);
 
-int main(){
+int main() {
 
 	float X[N], Y[N], porcentaje;
 	
