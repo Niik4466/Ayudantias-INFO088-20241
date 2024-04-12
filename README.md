@@ -1,7 +1,7 @@
 # Ayudantias-INFO088-20241
 En este repositorio se suben los ejercicios y respuestas de las ayudantias.
 
-##Instrucciones de ejecución
+## Instrucciones de ejecución
 Para ejecutar los códigos, primero deben compilarlo desde la carpeta "Semana_X" con el comando
 ```
 make
