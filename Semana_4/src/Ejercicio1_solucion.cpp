@@ -16,7 +16,7 @@ int main(){
 
     //validamos que n no sea menor o igual que 0
     do{
-        cout << "Ingrese n: "; cin >> n;
+        fputs_unlocked("Ingrese n: ",stdout); cin >> n;
     }while(n < 1);
 
     m = n;
@@ -24,22 +24,22 @@ int main(){
     //creamos nuestro arreglo dinámico
     A = new int[n];
 
-    cout << "El tamaño del arreglo orignal es: " << n << " y se agregarán " << MULT*m-m << " elementos" << endl;
+    printf("El tamaño del arreglo orignal es: %d y se agregarán %d elementos\n", n, MULT*m-m);
 
     //llenamos el arreglo dinámico hasta 10 veces su capacidad
     for (int i = 0; i < MULT*m; i++){
         
         //verificamos si la variable i se pasó de la capacidad
         if (i%n == 0 && i != 0){
-            cout << "Aumentando espacio..." << endl;
+            fputs_unlocked("Aumentando espacio...\n", stdout);
             aumentaCapacidad(A, n, m);
-            cout << "Listo!!" << endl;
+            fputs_unlocked("Listo!!\n", stdout);
         }
         //agregamos un valor aleatorio al arreglo A
         A[i] = MIN + rand()%(MAX-MIN);
     }
 
-    cout << "El tamaño del arreglo final es: " << n << " y se agregaron " << MULT*m-m << " elementos" << endl;
+    printf("El tamaño del arreglo final es: %d y se agregaron %d elementos\n", n, MULT*m-m);
 
     //eliminamos el Array dinamico que no estará en uso
     delete [] A;
