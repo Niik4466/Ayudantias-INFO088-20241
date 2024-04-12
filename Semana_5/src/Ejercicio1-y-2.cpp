@@ -13,14 +13,14 @@ Además con:
 
 /*
 Ejercicio 1:
-Teniendo un arreglo de Alum[0..n-1] llamado "Alumnos", cree la función quickSortId(Alum *Alumno, int l, int r)
+Teniendo un arreglo de Alum[0..n-1] llamado "Alumnos", cree la función quickSortId(vector<Alum> &Alumno, const int l, const int r)
 que ordena el arreglo de alumnos ascendentemente utilizando el campo id.
-Luego de ordenar el arreglo, intente buscar una id aleatoria utilizando binarySearchId(Alum *Alumno, int l, int r).
+Luego de ordenar el arreglo, intente buscar una id aleatoria utilizando binarySearchId(vector<Alum> &Alumno, const int l, const int r).
 
 Ejercicio 2:
-Siguiendo el enunciado del ejercicio anterior, cree la función insertionSortNombre(Alum *Alumno, int l, int r)
+Siguiendo el enunciado del ejercicio anterior, cree la función insertionSortNombre(vector<Alum> &Alumno, int l, int r)
 ¿De que manera puede ordenarse según el nombre, considerando que son caracteres y un nombre puede ser igual a otro?
-Adicionalmente implemente un binarySearchNombre(Alum *Alumno, int l, int r) el cual, despues de ordenarlo con su insertionSort,
+Adicionalmente implemente un binarySearchNombre(vector<Alum> &Alumno, const int l, const int r) el cual, despues de ordenarlo con su insertionSort,
 busque un nombre en el arreglo.
 */
 
@@ -56,10 +56,11 @@ struct Alum{
 };
 
 void genAlumnos(vector<Alum> &Alumno, const int n);
-void quickSortId(vector<Alum> &Alumno, int l, int r);
-int partitionId(vector<Alum> &Alumno, int l ,int r);
-int binarySearchId(vector<Alum> &Alumno, int l, int r);
-
+void quickSortId(vector<Alum> &Alumno, const int l, const int r);
+int partitionId(vector<Alum> &Alumno, const int l ,const int r);
+int binarySearchId(vector<Alum> &Alumno, const int l, const int r);
+void insertionSortNombre(vector<Alum> &Alumno, int l, int r);
+int binarySearchNombre(vector<Alum> &Alumno, const int l, const int r);
 
 // A esta definición del main(), se le pueden pasar argumentos
 int main(int argc, char **argv) {
@@ -139,14 +140,22 @@ void genAlumnos(vector<Alum> &Alumno, const int n) {
 	}
 }
 
-void quickSortId(vector<Alum> &Alumno, int l, int r) {
+void quickSortId(vector<Alum> &Alumno, const int l, const int r) {
 
 }
 
-int partitionId(vector<Alum> &Alumno, int l ,int r) {
+int partitionId(vector<Alum> &Alumno, const int l ,const int r) {
     return 0;
 }
 
-int binarySearchId(vector<Alum> &Alumno, int l, int r) {
+int binarySearchId(vector<Alum> &Alumno, const int l, const int r) {
+    return 0;
+}
+
+void insertionSortNombre(vector<Alum> &Alumno, int l, int r) {
+
+}
+
+int binarySearchNombre(vector<Alum> &Alumno, const int l, const int r) {
     return 0;
 }
