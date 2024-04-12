@@ -14,7 +14,7 @@ void llenaMatriz(char** A);
 void imprimeMatriz(char** A);
 bool encuentraPalabra(char** A);
 
-int main(){
+int main() {
 
     char** A = new char*[M];
     for (int i = 0; i < M; ++i)
