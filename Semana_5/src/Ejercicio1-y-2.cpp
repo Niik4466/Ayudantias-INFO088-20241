@@ -84,7 +84,7 @@ int main(int argc, char **argv) {
 void genAlumnos(vector<Alum> &Alumnos) {
 	int i, a, b;
 
-	for(i=0; i<Alumnos.size(); ++i){
+	for(i=0; i<(int)Alumnos.size(); ++i){
 		Alumnos.at(i).id = rand();
 		strcpy(Alumnos.at(i).apellidos, apel.at(rand()%N_APEL)); // primer apellido
 		strcat(Alumnos.at(i).apellidos, " ");
