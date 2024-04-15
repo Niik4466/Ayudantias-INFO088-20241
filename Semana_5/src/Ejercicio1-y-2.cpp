@@ -15,12 +15,12 @@ Además con:
 Ejercicio 1:
 Teniendo un arreglo de Alum[0..n-1] llamado "Alumnos", cree la función quickSortId(vector<Alum> &Alumnos, const int l, const int r)
 que ordena el arreglo de alumnos ascendentemente utilizando el campo id.
-Luego de ordenar el arreglo, intente buscar una id aleatoria utilizando binarySearchId(vector<Alum> &Alumnos, const int l, const int r).
+Luego de ordenar el arreglo, intente buscar una id aleatoria utilizando binarySearchId(vector<Alum> &Alumnos, const int x).
 
 Ejercicio 2:
 Siguiendo el enunciado del ejercicio anterior, cree la función insertionSortNombre(vector<Alum> &Alumnos, int l, int r)
 ¿De que manera puede ordenarse según el nombre, considerando que son caracteres y un nombre puede ser igual a otro?
-Adicionalmente implemente un binarySearchNombre(vector<Alum> &Alumnos, const int l, const int r) el cual, despues de ordenarlo con su insertionSort,
+Adicionalmente implemente un binarySearchNombre(vector<Alum> &Alumnos, const char c[21]) el cual, despues de ordenarlo con su insertionSort,
 busque un nombre en el arreglo.
 */
 
@@ -59,9 +59,9 @@ void genAlumnos(vector<Alum> &Alumnos, const int n);
 void print_alumnos(vector<Alum> &Alumnos, const int n);
 void quickSortId(vector<Alum> &Alumnos, const int l, const int r);
 int partitionId(vector<Alum> &Alumnos, const int l ,const int r);
-int binarySearchId(vector<Alum> &Alumnos, const int l, const int r);
+int binarySearchId(vector<Alum> &Alumnos, const int x);
 void insertionSortNombre(vector<Alum> &Alumnos, int l, int r);
-int binarySearchNombre(vector<Alum> &Alumnos, const int l, const int r);
+int binarySearchNombre(vector<Alum> &Alumnos, const char c[21]);
 
 // A esta definición del main(), se le pueden pasar argumentos
 int main(int argc, char **argv) {
@@ -152,7 +152,7 @@ int partitionId(vector<Alum> &Alumnos, const int l ,const int r) {
     return 0;
 }
 
-int binarySearchId(vector<Alum> &Alumnos, const int l, const int r) {
+int binarySearchId(vector<Alum> &Alumnos, const int x) {
     return 0;
 }
 
@@ -160,6 +160,6 @@ void insertionSortNombre(vector<Alum> &Alumnos, int l, int r) {
 
 }
 
-int binarySearchNombre(vector<Alum> &Alumnos, const int l, const int r) {
+int binarySearchNombre(vector<Alum> &Alumnos, const char c[21]) {
     return 0;
 }
