@@ -13,14 +13,14 @@ Además con:
 
 /*
 Ejercicio 1:
-Teniendo un arreglo de Alum[0..n-1] llamado "Alumnos", cree la función quickSortId(vector<Alum> &Alumno, const int l, const int r)
+Teniendo un arreglo de Alum[0..n-1] llamado "Alumnos", cree la función quickSortId(vector<Alum> &Alumnos, const int l, const int r)
 que ordena el arreglo de alumnos ascendentemente utilizando el campo id.
-Luego de ordenar el arreglo, intente buscar una id aleatoria utilizando binarySearchId(vector<Alum> &Alumno, const int l, const int r).
+Luego de ordenar el arreglo, intente buscar una id aleatoria utilizando binarySearchId(vector<Alum> &Alumnos, const int l, const int r).
 
 Ejercicio 2:
-Siguiendo el enunciado del ejercicio anterior, cree la función insertionSortNombre(vector<Alum> &Alumno, int l, int r)
+Siguiendo el enunciado del ejercicio anterior, cree la función insertionSortNombre(vector<Alum> &Alumnos, int l, int r)
 ¿De que manera puede ordenarse según el nombre, considerando que son caracteres y un nombre puede ser igual a otro?
-Adicionalmente implemente un binarySearchNombre(vector<Alum> &Alumno, const int l, const int r) el cual, despues de ordenarlo con su insertionSort,
+Adicionalmente implemente un binarySearchNombre(vector<Alum> &Alumnos, const int l, const int r) el cual, despues de ordenarlo con su insertionSort,
 busque un nombre en el arreglo.
 */
 
@@ -55,13 +55,13 @@ struct Alum{
 	int edad;		// IN [MIN_EDAD..MAX_EDAD]
 };
 
-void genAlumnos(vector<Alum> &Alumno, const int n);
-void print_alumnos(vector<Alum> &Alumno, const int n);
-void quickSortId(vector<Alum> &Alumno, const int l, const int r);
-int partitionId(vector<Alum> &Alumno, const int l ,const int r);
-int binarySearchId(vector<Alum> &Alumno, const int l, const int r);
-void insertionSortNombre(vector<Alum> &Alumno, int l, int r);
-int binarySearchNombre(vector<Alum> &Alumno, const int l, const int r);
+void genAlumnos(vector<Alum> &Alumnos, const int n);
+void print_alumnos(vector<Alum> &Alumnos, const int n);
+void quickSortId(vector<Alum> &Alumnos, const int l, const int r);
+int partitionId(vector<Alum> &Alumnos, const int l ,const int r);
+int binarySearchId(vector<Alum> &Alumnos, const int l, const int r);
+void insertionSortNombre(vector<Alum> &Alumnos, int l, int r);
+int binarySearchNombre(vector<Alum> &Alumnos, const int l, const int r);
 
 // A esta definición del main(), se le pueden pasar argumentos
 int main(int argc, char **argv) {
@@ -71,62 +71,62 @@ int main(int argc, char **argv) {
 	}
 
     const int n=atoi(argv[1]);
-	vector<Alum> Alumno(n);	// ESTO ES MEMORIA DINAMICA --> no sabe el compilador cuantos bytes son
+	vector<Alum> Alumnos(n);	// ESTO ES MEMORIA DINAMICA --> no sabe el compilador cuantos bytes son
 
-	genAlumnos(Alumno, n);
+	genAlumnos(Alumnos, n);
 
-	print_alumnos(Alumno, n);
+	print_alumnos(Alumnos, n);
 
 	return EXIT_SUCCESS;
 }
 
 // generar n alumnos con dos nombres y 2 apellidos aleatorios desde los arreglos globales
-void genAlumnos(vector<Alum> &Alumno, const int n) {
+void genAlumnos(vector<Alum> &Alumnos, const int n) {
 	int i, a, b;
 
 	for(i=0; i<n; ++i){
-		Alumno.at(i).id = rand();
-		strcpy(Alumno.at(i).apellidos, apel.at(rand()%N_APEL)); // primer apellido
-		strcat(Alumno.at(i).apellidos, " ");
-		strcat(Alumno.at(i).apellidos, apel.at(rand()%N_APEL));
+		Alumnos.at(i).id = rand();
+		strcpy(Alumnos.at(i).apellidos, apel.at(rand()%N_APEL)); // primer apellido
+		strcat(Alumnos.at(i).apellidos, " ");
+		strcat(Alumnos.at(i).apellidos, apel.at(rand()%N_APEL));
 
         a = b = rand()%N_NOM;
             while (a==b)
 				b = rand()%N_NOM;
 		
 		if(rand()%2 == 0){
-			Alumno.at(i).masc = false;
+			Alumnos.at(i).masc = false;
             
-			strcpy(Alumno.at(i).nombres, ellas.at(a));
-			strcat(Alumno.at(i).nombres, " ");
-			strcat(Alumno.at(i).nombres, ellas.at(b));
+			strcpy(Alumnos.at(i).nombres, ellas.at(a));
+			strcat(Alumnos.at(i).nombres, " ");
+			strcat(Alumnos.at(i).nombres, ellas.at(b));
 		}else{
-			Alumno.at(i).masc = true;
+			Alumnos.at(i).masc = true;
             
-			strcpy(Alumno.at(i).nombres, ellos.at(a));
-			strcat(Alumno.at(i).nombres, " ");
-			strcat(Alumno.at(i).nombres, ellos.at(b));
+			strcpy(Alumnos.at(i).nombres, ellos.at(a));
+			strcat(Alumnos.at(i).nombres, " ");
+			strcat(Alumnos.at(i).nombres, ellos.at(b));
 		}
 
-		Alumno.at(i).edad = MIN_EDAD + rand()%(MAX_EDAD-MIN_EDAD+1);
-		Alumno.at(i).idCarrera = Carrera[rand()%N_CAR].id;
+		Alumnos.at(i).edad = MIN_EDAD + rand()%(MAX_EDAD-MIN_EDAD+1);
+		Alumnos.at(i).idCarrera = Carrera[rand()%N_CAR].id;
 	}
 }
 
-void print_alumnos(vector<Alum> &Alumno, const int n) {
+void print_alumnos(vector<Alum> &Alumnos, const int n) {
     printf("Lista de Alumnos:\n");
 	for (int i=0; i<n; i++){
-		printf("Id        : %d\n", Alumno.at(i).id);
+		printf("Id        : %d\n", Alumnos.at(i).id);
 
-		if (Alumno.at(i).masc)
+		if (Alumnos.at(i).masc)
 			fputs_unlocked("Sexo      : Masculino \n", stdout);
 		else
 			fputs_unlocked("Sexo      : Femenino \n", stdout);
 
-		printf("Nombres   : %s\n", Alumno.at(i).nombres);
-		printf("Apellidos : %s\n", Alumno.at(i).apellidos);
+		printf("Nombres   : %s\n", Alumnos.at(i).nombres);
+		printf("Apellidos : %s\n", Alumnos.at(i).apellidos);
 		fputs_unlocked("Carreara  : ",stdout);
-		switch (Alumno.at(i).idCarrera) {
+		switch (Alumnos.at(i).idCarrera) {
 			case 'B':
 				printf("%s\n",Carrera[0].nombre);
 				break;
@@ -140,26 +140,26 @@ void print_alumnos(vector<Alum> &Alumno, const int n) {
 				fputs_unlocked(" NO DEFINIDA !! \n", stdout);
 				break;
 		}
-		printf("Edad      : %d\n\n", Alumno.at(i).edad);
+		printf("Edad      : %d\n\n", Alumnos.at(i).edad);
 	}
 }
 
-void quickSortId(vector<Alum> &Alumno, const int l, const int r) {
+void quickSortId(vector<Alum> &Alumnos, const int l, const int r) {
 
 }
 
-int partitionId(vector<Alum> &Alumno, const int l ,const int r) {
+int partitionId(vector<Alum> &Alumnos, const int l ,const int r) {
     return 0;
 }
 
-int binarySearchId(vector<Alum> &Alumno, const int l, const int r) {
+int binarySearchId(vector<Alum> &Alumnos, const int l, const int r) {
     return 0;
 }
 
-void insertionSortNombre(vector<Alum> &Alumno, int l, int r) {
+void insertionSortNombre(vector<Alum> &Alumnos, int l, int r) {
 
 }
 
-int binarySearchNombre(vector<Alum> &Alumno, const int l, const int r) {
+int binarySearchNombre(vector<Alum> &Alumnos, const int l, const int r) {
     return 0;
 }
