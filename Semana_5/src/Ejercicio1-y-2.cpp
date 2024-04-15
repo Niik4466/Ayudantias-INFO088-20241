@@ -55,8 +55,8 @@ struct Alum{
 	int edad;		// IN [MIN_EDAD..MAX_EDAD]
 };
 
-void genAlumnos(vector<Alum> &Alumnos, const int n);
-void print_alumnos(vector<Alum> &Alumnos, const int n);
+void genAlumnos(vector<Alum> &Alumnos);
+void print_alumnos(vector<Alum> &Alumnos);
 void quickSortId(vector<Alum> &Alumnos, const int l, const int r);
 int partitionId(vector<Alum> &Alumnos, const int l ,const int r);
 int binarySearchId(vector<Alum> &Alumnos, const int x);
@@ -73,18 +73,18 @@ int main(int argc, char **argv) {
     const int n=atoi(argv[1]);
 	vector<Alum> Alumnos(n);	// ESTO ES MEMORIA DINAMICA --> no sabe el compilador cuantos bytes son
 
-	genAlumnos(Alumnos, n);
+	genAlumnos(Alumnos);
 
-	print_alumnos(Alumnos, n);
+	print_alumnos(Alumnos);
 
 	return EXIT_SUCCESS;
 }
 
 // generar n alumnos con dos nombres y 2 apellidos aleatorios desde los arreglos globales
-void genAlumnos(vector<Alum> &Alumnos, const int n) {
+void genAlumnos(vector<Alum> &Alumnos) {
 	int i, a, b;
 
-	for(i=0; i<n; ++i){
+	for(i=0; i<Alumnos.size(); ++i){
 		Alumnos.at(i).id = rand();
 		strcpy(Alumnos.at(i).apellidos, apel.at(rand()%N_APEL)); // primer apellido
 		strcat(Alumnos.at(i).apellidos, " ");
@@ -113,7 +113,7 @@ void genAlumnos(vector<Alum> &Alumnos, const int n) {
 	}
 }
 
-void print_alumnos(vector<Alum> &Alumnos, const int n) {
+void print_alumnos(vector<Alum> &Alumnos) {
     printf("Lista de Alumnos:\n");
 	for (Alum alumno : Alumnos){
 		printf("Id        : %d\n", alumno.id);
