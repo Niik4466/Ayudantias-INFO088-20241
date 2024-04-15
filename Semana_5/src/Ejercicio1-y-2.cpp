@@ -56,6 +56,7 @@ struct Alum{
 };
 
 void genAlumnos(vector<Alum> &Alumno, const int n);
+void print_alumnos(vector<Alum> &Alumno, const int n);
 void quickSortId(vector<Alum> &Alumno, const int l, const int r);
 int partitionId(vector<Alum> &Alumno, const int l ,const int r);
 int binarySearchId(vector<Alum> &Alumno, const int l, const int r);
@@ -69,40 +70,12 @@ int main(int argc, char **argv) {
 		exit(EXIT_FAILURE);
 	}
 
-	int i;
     const int n=atoi(argv[1]);
 	vector<Alum> Alumno(n);	// ESTO ES MEMORIA DINAMICA --> no sabe el compilador cuantos bytes son
 
 	genAlumnos(Alumno, n);
 
-	printf("Lista de Alumnos:\n");
-	for (i=0; i<n; i++){
-		printf("Id        : %d\n", Alumno.at(i).id);
-
-		if (Alumno.at(i).masc)
-			fputs_unlocked("Sexo      : Masculino \n", stdout);
-		else
-			fputs_unlocked("Sexo      : Femenino \n", stdout);
-
-		printf("Nombres   : %s\n", Alumno.at(i).nombres);
-		printf("Apellidos : %s\n", Alumno.at(i).apellidos);
-		fputs_unlocked("Carreara  : ",stdout);
-		switch (Alumno.at(i).idCarrera) {
-			case 'B':
-				printf("%s\n",Carrera[0].nombre);
-				break;
-			case 'I':
-				printf("%s\n",Carrera[1].nombre);
-				break;
-			case 'M':
-				printf("%s\n",Carrera[2].nombre);
-				break;
-			default:
-				fputs_unlocked(" NO DEFINIDA !! \n", stdout);
-				break;
-		}
-		printf("Edad      : %d\n\n", Alumno.at(i).edad);
-	}
+	print_alumnos(Alumno, n);
 
 	return EXIT_SUCCESS;
 }
@@ -137,6 +110,37 @@ void genAlumnos(vector<Alum> &Alumno, const int n) {
 
 		Alumno.at(i).edad = MIN_EDAD + rand()%(MAX_EDAD-MIN_EDAD+1);
 		Alumno.at(i).idCarrera = Carrera[rand()%N_CAR].id;
+	}
+}
+
+void print_alumnos(vector<Alum> &Alumno, const int n) {
+    printf("Lista de Alumnos:\n");
+	for (int i=0; i<n; i++){
+		printf("Id        : %d\n", Alumno.at(i).id);
+
+		if (Alumno.at(i).masc)
+			fputs_unlocked("Sexo      : Masculino \n", stdout);
+		else
+			fputs_unlocked("Sexo      : Femenino \n", stdout);
+
+		printf("Nombres   : %s\n", Alumno.at(i).nombres);
+		printf("Apellidos : %s\n", Alumno.at(i).apellidos);
+		fputs_unlocked("Carreara  : ",stdout);
+		switch (Alumno.at(i).idCarrera) {
+			case 'B':
+				printf("%s\n",Carrera[0].nombre);
+				break;
+			case 'I':
+				printf("%s\n",Carrera[1].nombre);
+				break;
+			case 'M':
+				printf("%s\n",Carrera[2].nombre);
+				break;
+			default:
+				fputs_unlocked(" NO DEFINIDA !! \n", stdout);
+				break;
+		}
+		printf("Edad      : %d\n\n", Alumno.at(i).edad);
 	}
 }
 
