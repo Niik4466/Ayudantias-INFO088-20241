@@ -115,18 +115,18 @@ void genAlumnos(vector<Alum> &Alumnos, const int n) {
 
 void print_alumnos(vector<Alum> &Alumnos, const int n) {
     printf("Lista de Alumnos:\n");
-	for (int i=0; i<n; i++){
-		printf("Id        : %d\n", Alumnos.at(i).id);
+	for (Alum alumno : Alumnos){
+		printf("Id        : %d\n", alumno.id);
 
-		if (Alumnos.at(i).masc)
+		if (alumno.masc)
 			fputs_unlocked("Sexo      : Masculino \n", stdout);
 		else
 			fputs_unlocked("Sexo      : Femenino \n", stdout);
 
-		printf("Nombres   : %s\n", Alumnos.at(i).nombres);
-		printf("Apellidos : %s\n", Alumnos.at(i).apellidos);
+		printf("Nombres   : %s\n", alumno.nombres);
+		printf("Apellidos : %s\n", alumno.apellidos);
 		fputs_unlocked("Carreara  : ",stdout);
-		switch (Alumnos.at(i).idCarrera) {
+		switch (alumno.idCarrera) {
 			case 'B':
 				printf("%s\n",Carrera[0].nombre);
 				break;
@@ -140,7 +140,7 @@ void print_alumnos(vector<Alum> &Alumnos, const int n) {
 				fputs_unlocked(" NO DEFINIDA !! \n", stdout);
 				break;
 		}
-		printf("Edad      : %d\n\n", Alumnos.at(i).edad);
+		printf("Edad      : %d\n\n", alumno.edad);
 	}
 }
 
