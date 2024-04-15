@@ -115,7 +115,7 @@ void genAlumnos(vector<Alum> &Alumnos) {
 
 void print_alumnos(vector<Alum> &Alumnos) {
     printf("Lista de Alumnos:\n");
-	for (Alum alumno : Alumnos){
+	for (Alum &alumno : Alumnos){
 		printf("Id        : %d\n", alumno.id);
 
 		if (alumno.masc)
