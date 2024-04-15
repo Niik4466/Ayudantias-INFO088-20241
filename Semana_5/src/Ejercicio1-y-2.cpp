@@ -18,7 +18,7 @@ que ordena el arreglo de alumnos ascendentemente utilizando el campo id.
 Luego de ordenar el arreglo, intente buscar una id aleatoria utilizando binarySearchId(vector<Alum> &Alumnos, const int x).
 
 Ejercicio 2:
-Siguiendo el enunciado del ejercicio anterior, cree la función insertionSortNombre(vector<Alum> &Alumnos, int l, int r)
+Siguiendo el enunciado del ejercicio anterior, cree la función insertionSortNombre(vector<Alum> &Alumnos)
 ¿De que manera puede ordenarse según el nombre, considerando que son caracteres y un nombre puede ser igual a otro?
 Adicionalmente implemente un binarySearchNombre(vector<Alum> &Alumnos, const char c[21]) el cual, despues de ordenarlo con su insertionSort,
 busque un nombre en el arreglo.
@@ -60,7 +60,7 @@ void print_alumnos(vector<Alum> &Alumnos);
 void quickSortId(vector<Alum> &Alumnos, const int l, const int r);
 int partitionId(vector<Alum> &Alumnos, const int l ,const int r);
 int binarySearchId(vector<Alum> &Alumnos, const int x);
-void insertionSortNombre(vector<Alum> &Alumnos, int l, int r);
+void insertionSortNombre(vector<Alum> &Alumnos);
 int binarySearchNombre(vector<Alum> &Alumnos, const char c[21]);
 
 // A esta definición del main(), se le pueden pasar argumentos
@@ -156,7 +156,7 @@ int binarySearchId(vector<Alum> &Alumnos, const int x) {
     return 0;
 }
 
-void insertionSortNombre(vector<Alum> &Alumnos, int l, int r) {
+void insertionSortNombre(vector<Alum> &Alumnos) {
 
 }
 
