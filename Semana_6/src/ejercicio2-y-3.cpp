@@ -92,7 +92,8 @@ void appendToListR(nodo **l, int num){
 		*l = nuevo;
 	else{
 		nodo *p = *l;
-		for(;p->next != nullptr; p = p->next);
+		while(p->next != nullptr)
+            p = p->next;
 
 		p->next = nuevo;
 	}
@@ -111,7 +112,8 @@ void inserInList(nodo **l, int num){
 			nuevo->next = p;
 			*l = nuevo;
 		}else{
-			for(;p->next != nullptr && p->next->val < num; p=p->next);
+			while(p->next != nullptr && p->next->val < num)
+                p=p->next;
 
 			nuevo->next = p->next;
 			p->next = nuevo;
@@ -120,9 +122,8 @@ void inserInList(nodo **l, int num){
 }
 
 void printList(nodo *l){
-	nodo *p = l;
 	fputs_unlocked("Lista = ", stdout);
-	for(;p != nullptr; p=p->next){
+	for(nodo *p = l; p != nullptr; p=p->next){
 		printf("%d ",p->val);
 	}
 	fputs_unlocked("\n", stdout);
