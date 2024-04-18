@@ -21,7 +21,7 @@ void appendToListR(nodo **l, int num);
 void inserInList(nodo **l, int num);
 bool removeFromList(nodo **l, int num);
 void printList(nodo *l);
-void reverseList(nodo **l, nodo *reversel);
+void reverseList(nodo **l);
 
 int main(int argc, char **argv){
 	int i, x;
@@ -82,7 +82,6 @@ void appendToListR(nodo **l, int num){
 	nuevo->val = num;
 	nuevo->next = NULL;
 
-	printf("Aniadiendo el nodo con val = %d\n", num);
 	if (*l == nullptr)
 		*l = nuevo;
 	else{

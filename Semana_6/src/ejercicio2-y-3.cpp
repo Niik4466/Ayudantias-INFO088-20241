@@ -87,7 +87,6 @@ void appendToListR(nodo **l, int num){
 	nuevo->val = num;
 	nuevo->next = NULL;
 
-	printf("Aniadiendo el nodo con val = %d\n", num);
 	if (*l == nullptr)
 		*l = nuevo;
 	else{
