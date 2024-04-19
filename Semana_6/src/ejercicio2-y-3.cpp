@@ -37,6 +37,7 @@ int main(int argc, char **argv){
 		x = rand()%MAX;
 		inserInList(&miLista, x);	
 	}
+    fputs_unlocked("Lista = ", stdout);
 	printList(miLista);
 
 
@@ -52,7 +53,7 @@ void juntar_listas(nodo **pares, nodo **impares, nodo *l2) {
     return;
 }
 
-bool removeFromList(nodo **l, int num){
+bool removeFromList(nodo **l, int num) {
 	if (*l == nullptr)
 		return false;
 
@@ -76,14 +77,14 @@ bool removeFromList(nodo **l, int num){
 	return false;
 }
 
-void appendToListL(nodo **l, int num){
+void appendToListL(nodo **l, int num) {
 	nodo *nuevo = new nodo;
 	nuevo->val = num;
 	nuevo->next = *l;
 	*l = nuevo;
 }
 
-void appendToListR(nodo **l, int num){
+void appendToListR(nodo **l, int num) {
 	nodo *nuevo = new nodo;
 	nuevo->val = num;
 	nuevo->next = NULL;
@@ -99,7 +100,7 @@ void appendToListR(nodo **l, int num){
 	}
 }
 
-void inserInList(nodo **l, int num){
+void inserInList(nodo **l, int num) {
 	nodo *nuevo = new nodo;
 	nuevo->val = num;
 	nuevo->next = NULL;
@@ -121,8 +122,7 @@ void inserInList(nodo **l, int num){
 	}
 }
 
-void printList(nodo *l){
-	fputs_unlocked("Lista = ", stdout);
+void printList(nodo *l) {
 	for(nodo *p = l; p != nullptr; p=p->next){
 		printf("%d ",p->val);
 	}

@@ -23,7 +23,7 @@ bool removeFromList(nodo **l, int num);
 void printList(nodo *l);
 void reverseList(nodo **l);
 
-int main(int argc, char **argv){
+int main(int argc, char **argv) {
 	int i, x;
 	nodo *miLista = NULL;
 
@@ -31,6 +31,7 @@ int main(int argc, char **argv){
 		x = rand()%MAX;
 		inserInList(&miLista, x);	
 	}
+    fputs_unlocked("Lista = ", stdout);
 	printList(miLista);
 
 
@@ -44,7 +45,7 @@ void reverseList(nodo **l) {
 
 // elimina el primer nodo de la lista con valor num que encuentra 
 // (de izquierda a derecha)
-bool removeFromList(nodo **l, int num){
+bool removeFromList(nodo **l, int num) {
 	if (*l == nullptr)
 		return false;
 
@@ -69,7 +70,7 @@ bool removeFromList(nodo **l, int num){
 }
 
 // aniade un nodo al inicio de la lista
-void appendToListL(nodo **l, int num){
+void appendToListL(nodo **l, int num) {
 	nodo *nuevo = new nodo;
 	nuevo->val = num;
 	nuevo->next = *l;
@@ -77,7 +78,7 @@ void appendToListL(nodo **l, int num){
 }
 
 // aniade un nodo al final de la lista
-void appendToListR(nodo **l, int num){
+void appendToListR(nodo **l, int num) {
 	nodo *nuevo = new nodo;
 	nuevo->val = num;
 	nuevo->next = NULL;
@@ -93,7 +94,7 @@ void appendToListR(nodo **l, int num){
 }
 
 // inserta el nodo en su posicion correcta (ascendente)
-void inserInList(nodo **l, int num){
+void inserInList(nodo **l, int num) {
 	nodo *nuevo = new nodo;
 	nuevo->val = num;
 	nuevo->next = NULL;
@@ -115,8 +116,7 @@ void inserInList(nodo **l, int num){
 	}
 }
 
-void printList(nodo *l){
-	fputs_unlocked("Lista = ", stdout);
+void printList(nodo *l) {
 	for(nodo *p = l; p != nullptr; p=p->next){
 		printf("%d ",p->val);
 	}
