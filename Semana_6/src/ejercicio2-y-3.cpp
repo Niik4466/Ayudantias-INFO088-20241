@@ -1,11 +1,11 @@
 /*
 Ejercicio 2
 Dada una lista enlazada ordenada ascendentemente con n elementos,
-separe los elementos de la lista que sean pares en una lista e impares en otra en la funcion separa_pares_impares(nodo **l, nodo *pares, nodo *impares).
+separe los elementos de la lista que sean pares en una lista e impares en otra en la funcion separa_pares_impares(nodo **l, nodo **pares, nodo **impares).
 
 Ejercicio 3
 Teniendo las listas de pares e impares del ejercicio 2
-ahora debe unirlas en una nueva lista manteniendo el orden original en la funcion juntar_listas(nodo **pares, nodo **impares, nodo *l2).
+ahora debe unirlas en una nueva lista manteniendo el orden original en la funcion juntar_listas(nodo **pares, nodo **impares, nodo **l2).
 */
 
 #include <random>
@@ -26,7 +26,7 @@ void inserInList(nodo **l, int num);
 bool removeFromList(nodo **l, int num);
 void printList(nodo *l);
 void separa_pares_impares(nodo **l, nodo **pares, nodo **impares);
-void juntar_listas(nodo **pares, nodo **impares, nodo *l2);
+void juntar_listas(nodo **pares, nodo **impares, nodo **l2);
 
 int main(int argc, char **argv){
 	int i, x;
@@ -49,7 +49,7 @@ void separa_pares_impares(nodo **l, nodo **pares, nodo **impares) {
     return;
 }
 
-void juntar_listas(nodo **pares, nodo **impares, nodo *l2) {
+void juntar_listas(nodo **pares, nodo **impares, nodo **l2) {
     return;
 }
 
