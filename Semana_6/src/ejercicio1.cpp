@@ -34,13 +34,36 @@ int main(int argc, char **argv) {
     fputs_unlocked("Lista = ", stdout);
 	printList(miLista);
 
+    reverseList(&miLista);
+    fputs_unlocked("Lista invertida = ", stdout);
+    printList(miLista);
 
 
 	return EXIT_SUCCESS;
 }
 
 void reverseList(nodo **l) {
-    return;
+    if(*l == nullptr || (*l)->next == nullptr){
+        return;
+    }
+
+    nodo *p = (*l)->next;
+    (*l)->next = NULL;
+    if(p->next == nullptr){
+        p->next = *l;
+        *l = p;
+    } else {
+        nodo *q = p->next;
+
+        while(q != nullptr){
+            p->next = *l;
+            *l = p;
+            p = q;
+            q = q->next;
+        }
+        p->next = *l;
+        *l = p;
+    }
 }
 
 // elimina el primer nodo de la lista con valor num que encuentra 
