@@ -25,7 +25,7 @@ void appendToListR(nodo **l, int num);
 void inserInList(nodo **l, int num);
 bool removeFromList(nodo **l, int num);
 void printList(nodo *l);
-void separa_pares_impares(nodo **l, nodo *pares, nodo *impares);
+void separa_pares_impares(nodo **l, nodo **pares, nodo **impares);
 void juntar_listas(nodo **pares, nodo **impares, nodo *l2);
 
 int main(int argc, char **argv){
@@ -45,7 +45,7 @@ int main(int argc, char **argv){
 	return EXIT_SUCCESS;
 }
 
-void separa_pares_impares(nodo **l, nodo *pares, nodo *impares) {
+void separa_pares_impares(nodo **l, nodo **pares, nodo **impares) {
     return;
 }
 
