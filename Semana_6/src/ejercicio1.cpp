@@ -43,16 +43,17 @@ int main(int argc, char **argv) {
 }
 
 void reverseList(nodo **l) {
+    //si el nodo es nulo o solo un elemento no hay nada que hacer asi que salimos
     if(*l == nullptr || (*l)->next == nullptr){
         return;
     }
-
+    //si son dos elementos hacemos que el segundo apunte al primero y el primero a null, luego hacemos que la cabecera quede en el segundo elemento
     nodo *p = (*l)->next;
     (*l)->next = NULL;
     if(p->next == nullptr){
         p->next = *l;
         *l = p;
-    } else {
+    } else { //En caso de que sean 3 o mas hacemos lo mismo pero manteniendo un puntero para el siguiente nodo a invertir
         nodo *q = p->next;
 
         while(q != nullptr){
@@ -61,6 +62,7 @@ void reverseList(nodo **l) {
             p = q;
             q = q->next;
         }
+        // ahora que q es nulo queda dar vuelta el punetero del ultimo nodo y convertirlo en la cabecera
         p->next = *l;
         *l = p;
     }
