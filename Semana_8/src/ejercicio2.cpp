@@ -28,6 +28,7 @@ using namespace std;
 
 void appendToList(nodo **l, int num);
 void imprimeLista(nodo *l);
+void insertionSortList(nodo *l, int n);
 
 int main(int argc, char** argv) {
     return 1;
