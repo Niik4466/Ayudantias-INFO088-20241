@@ -12,16 +12,16 @@ ejercicio1: pila
 	$(CC) $(CFLAGS) -o bin/prog1 Pila.o ejercicio1.cpp
 
 ejercicio2: pila
-	$(CC) $(CFLAGS) -o bin/prog2 Pila.o ejercicio2.cpp
+	$(CC) $(CFLAGS) -o bin/prog2 Pila.o ejercicio2_resuelto.cpp
 
 ejercicio3: pila
-	$(CC) $(CFLAGS) -o bin/prog3 Pila.o ejercicio3.cpp
+	$(CC) $(CFLAGS) -o bin/prog3 Pila.o ejercicio3_resuelto.cpp
 
 ejercicio4: pila
-	$(CC) $(CFLAGS) -o bin/prog4 Pila.o ejercicio4.cpp
+	$(CC) $(CFLAGS) -o bin/prog4 Pila.o ejercicio4_resuelto.cpp
 
 ejercicio5: pila
-	$(CC) $(CFLAGS) -o bin/prog5 Pila.o ejercicio5.cpp
+	$(CC) $(CFLAGS) -o bin/prog5 Pila.o ejercicio5_resuelto.cpp
 
 
 

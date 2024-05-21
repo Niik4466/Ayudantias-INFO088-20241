@@ -25,27 +25,27 @@ void enqueue(stack<int> cola, int valor);
 int dequeue(stack<int> cola);
 int front(stack<int> cola);
 
-int main(){
+int main() {
 
     return EXIT_SUCCESS;
 }
 
 //retorna true si la "cola" está vacía, false si no
-bool isEmpty(stack<int> cola){
+bool isEmpty(stack<int> cola) {
     return false;
 }
 
 //ingresa un nuevo valor a la "cola"
-void enqueue(stack<int> cola, int valor){
+void enqueue(stack<int> cola, int valor) {
     return;
 }
 
 //elimina un valor de la "cola"
-int dequeue(stack<int> cola){
+int dequeue(stack<int> cola) {
     return -1;
 }
 
 //retorna el valor al frente de la "cola"
-int front(stack<int> cola){
+int front(stack<int> cola) {
     return -1;
 }

@@ -7,13 +7,11 @@ de la clase "Pila" en el archivo pila.h, la cual almacena caracteres y se compor
 en el Main() se proporciona una prueba simple para corroborar que los métodos sean correctos
 */
 
-#include <cstring>
+#include <stdio.h>
 #include "Pila.h"
 using namespace std;
 
-bool esPalindrome(char *palabra, int n);
-
-int main(int argc, char** argv){
+int main(int argc, char** argv) {
 
     printf("Generando la Pila...\n");
     Pila miPila;
@@ -34,12 +32,12 @@ int main(int argc, char** argv){
     miPila.push('h');
     printf("\nListo!!!\n");
 
-    printf("\nQuitando e imprimiendo los elementos de la pila...\n");
-    
+    printf("\nQuitando e imprimiendo los elementos de la pila...\n\n");
+    fflush(stdout);
     while (!miPila.isEmpty())
-        printf("%c  %c", miPila.top(), miPila.pop());
+        printf("%c\t%c\n" , miPila.pop(), miPila.top()); 
 
-    printf("\n\nListo!!!\n");
+    printf("\nListo!!!\n");
 
     return EXIT_SUCCESS;
 }

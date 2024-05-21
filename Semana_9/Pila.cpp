@@ -17,25 +17,38 @@ Pila::~Pila() {
 
 //Método de Pila que retorna true si la pila está vacía y false si no.
 bool Pila::isEmpty() {
-    return false;
+    return tope == NULL;
 }
 
 //Método que agrega un valor al tope de la pila
 void Pila::push(char caracter) {
-    return;
+    nodo *nuevo = new nodo();
+    nuevo->down = tope;
+    tope = nuevo;
+    tope->val = caracter;
 }
 
 //Método que quita un valor del tope de la pila y lo retorna
 char Pila::pop() {
-    return '\0';
+    if (tope == NULL) return '\0'; //retorna el caracter nulo 
+    nodo *aux = tope;
+    char val = tope->val;
+    tope = tope->down;
+    delete aux;
+    return val;
 }
 
 //Método que retorna el valor en el tope de la pila
 char Pila::top() {
-    return '\0';
+    if (tope == NULL) return '\0';
+    return tope->val;
 }
 
 //Método que imprime la pila
-void printPila() {
-    return;
+void Pila::printPila() {
+    nodo *aux = tope;
+    while (aux != NULL){
+        printf("%c", aux->val);
+        aux = aux->down;
+    }
 }
