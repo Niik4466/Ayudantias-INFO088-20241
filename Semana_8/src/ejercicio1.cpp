@@ -27,6 +27,8 @@ bool esPalindrome(nodo *l);
 int main(int argc, char** argv){
     
     return EXIT_SUCCESS;
+    string s;
+    getline(cin, s);
 }
 
 void appendToList(nodo **l, char letra) {
