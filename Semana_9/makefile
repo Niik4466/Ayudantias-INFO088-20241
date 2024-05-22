@@ -1,5 +1,5 @@
 CC=g++
-CFLAGS=-std=c++23 -Ofast -Wall -Wextra -Wpedantic -Wno-unused-parameter -Wdouble-promotion
+CFLAGS=-std=c++23 -Ofast -Wshadow -Wall -Wextra -Wpedantic -Wno-unused-parameter -Wdouble-promotion
 BINS=bin/prog1 bin/prog2 bin/prog3 bin/prog4 bin/prog5
 all: clean problema
 
