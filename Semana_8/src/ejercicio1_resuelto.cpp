@@ -20,6 +20,7 @@ int main(int argc, char** argv){
 
     string palabra = argv[1];
     nodo *list = nullptr, *end_list;
+    list = end_list = nullptr;
     //obtengo el largo del arreglo
     int n = palabra.size();
     

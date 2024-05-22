@@ -10,7 +10,7 @@ typedef struct nodeList nodo;
 
 #define MAX 100
 
-void appendToList(nodo **l, int num);
+void appendToList(nodo **l, char num);
 void imprimeLista(nodo *l);
 void insertionSort_lists(nodo *l);
 
@@ -38,7 +38,7 @@ int main(int argc, char** argv) {
 
 void insertionSort_lists(nodo *l) {
     l = l->next; //empezamos con el siguiente a l
-    int key;
+    char key;
     nodo *j, *k;
     while(l != nullptr) {   //mientras el puntero l no sea nulo, entonces
         key = l->val;       //nuestra key será el valor en la estructura apuntada por l
@@ -53,7 +53,7 @@ void insertionSort_lists(nodo *l) {
     }
 }
 
-void appendToList(nodo **l, int num) {
+void appendToList(nodo **l, char num) {
     if(*l == nullptr) {
         *l = new nodo;
         (*l)->val = num;
