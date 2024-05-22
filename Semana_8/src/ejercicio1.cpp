@@ -39,5 +39,5 @@ void imprimeLista(nodo *l){
 }
 
 bool esPalindrome(nodo *l){
-
+    return 1;
 }

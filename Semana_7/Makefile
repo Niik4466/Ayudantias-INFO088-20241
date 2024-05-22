@@ -1,5 +1,5 @@
 CC=g++
-CFLAGS=-Wall -std=c++14
+CFLAGS=-std=c++23 -Ofast -Wall -Wextra -Wpedantic -Wno-unused-parameter -Wdouble-promotion
 BINS=arrayList
 all: clean problema
 
