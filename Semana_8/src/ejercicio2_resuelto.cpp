@@ -23,7 +23,7 @@ int main(int argc, char** argv) {
 
     nodo *l = NULL;
     for(int i=0; i<n; ++i) {
-        appendToList(&l, rand()%MAX);
+        appendToList(&l, (char)rand()%MAX);
     }
     //imprimimos la lista generada
     imprimeLista(l);

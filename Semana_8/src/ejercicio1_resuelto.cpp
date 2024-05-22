@@ -22,7 +22,7 @@ int main(int argc, char** argv){
     nodo *list = nullptr, *end_list;
     list = end_list = nullptr;
     //obtengo el largo del arreglo
-    int n = palabra.size();
+    int n = (int)palabra.size();
     
     //llenamos nuestra lista dinámica
     for (int i = n-1; i>=0; --i) {

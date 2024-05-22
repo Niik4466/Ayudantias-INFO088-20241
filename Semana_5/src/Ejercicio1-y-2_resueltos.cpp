@@ -207,7 +207,7 @@ int median_aprox(vector<Alum> &Alumnos, const int l, int r) {
 }
 
 int binarySearchId(vector<Alum> &Alumnos, const int x) {
-    int l = 0, r = Alumnos.size()-1;
+    int l = 0, r = (int)Alumnos.size()-1;
 
     while (l <= r) {
         int m = l + (r-l)/2;
@@ -244,7 +244,7 @@ void insertionSortNombre(vector<Alum> &Alumnos) {
 }
 
 int binarySearchNombre(vector<Alum> &Alumnos, const string s) {
-    int l = 0, r = Alumnos.size()-1;
+    int l = 0, r = (int)Alumnos.size()-1;
 
     while (l<=r) {
         int m = l + (r-l)/2;

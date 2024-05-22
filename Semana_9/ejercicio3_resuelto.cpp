@@ -34,24 +34,24 @@ bool esCorrecto(string &palabra) {
     while (!miPila.isEmpty())
     {
         c = miPila.pop();
-        pos = palabra.find(c);
+        pos = (int)palabra.find(c);
         switch (c) {
         case '(':
-            c_in_palarabra = palabra.find(')', pos+1);
+            c_in_palarabra = (int)palabra.find(')', pos+1);
             if(c_in_palarabra == -1)
                 return 0;
             palabra.erase(c_in_palarabra, 1);
             palabra.erase(pos, 1);
             break;
         case '[':
-            c_in_palarabra = palabra.find(']', pos+1);
+            c_in_palarabra = (int)palabra.find(']', pos+1);
             if(c_in_palarabra == -1)
                 return 0;
             palabra.erase(c_in_palarabra, 1);
             palabra.erase(pos, 1);
             break;
         case '{':
-            c_in_palarabra = palabra.find('}', pos+1);
+            c_in_palarabra = (int)palabra.find('}', pos+1);
             if(c_in_palarabra == -1)
                 return 0;
             palabra.erase(c_in_palarabra, 1);
