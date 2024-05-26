@@ -1,7 +1,7 @@
 #ifndef Pila_H
 #define Pila_H
 
-#include <ios>
+#include <iostream>
 using namespace std;
 
 class Pila{
