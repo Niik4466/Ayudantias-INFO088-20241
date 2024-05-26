@@ -15,9 +15,8 @@ PD: pueden cambiar las declaraciones de las funciones como quieran.
 PISTA: esto puede lograrse utilizando dos pilas.
 Si cambiamos todos los elementos de una pila a otra, el orden se invierte.
 */
-
+#include <ios>
 #include <stack>
-#include <iostream>
 using namespace std;
 
 bool isEmpty(stack<int> cola);

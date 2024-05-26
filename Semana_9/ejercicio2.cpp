@@ -14,7 +14,6 @@ PD: Son libres de elegir como quieren leer la palabra, pueden modificar la delca
     Si no quieren utilizar la clase pila creada en el ejercicio 1 pueden utilizar <Stack> de la STL
 */
 
-#include <iostream>
 #include "Pila.h"
 
 bool esPalindrome(string palabra);

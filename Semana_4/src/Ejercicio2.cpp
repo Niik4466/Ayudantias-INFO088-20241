@@ -12,7 +12,7 @@ Simultaneamente, la función debe retornar verdadero si encuentra la palabra o f
 
 */
 
-#include <iostream>
+#include <random>
 using namespace std;
 
 #define MIN 97  //valor mínimo que pueden tomar los carácteres

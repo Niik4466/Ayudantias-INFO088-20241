@@ -1,4 +1,3 @@
-#include <iostream>
 #include <vector>
 #include <random>
 using namespace std;
@@ -14,13 +13,13 @@ void quickSort(vector<int> &A, const int l, const int r);
 
 int main(int argc, char **argv){
     if (argc != 3){
-        cout << "Error. debe ejecutarse como ./prog n k" << endl;
+        fputs_unlocked("Error. Debe ejecutarse como ./alum n\n", stdout);
         exit(EXIT_FAILURE);
     }
 
     const int n = atoi(argv[1]), k = atoi(argv[2]);
     if (n < 1 || k < 1){
-        cout << "n debe ser mayor que 0!!\n";
+        fputs_unlocked("n debe ser mayot que 0!!\n", stdout);
         exit(EXIT_FAILURE);
     } 
 

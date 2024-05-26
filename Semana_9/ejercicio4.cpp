@@ -12,7 +12,6 @@ Puede usar otra Pila de apoyo.
 
 */
 
-#include <iostream>
 #include <stack>
 using namespace std;
 

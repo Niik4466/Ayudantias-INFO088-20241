@@ -23,7 +23,7 @@ struct nodeList {
 };
 typedef struct nodeList nodo;
 
-#include <iostream>
+#include <random>
 using namespace std;
 
 void appendToList(nodo **l, int num);

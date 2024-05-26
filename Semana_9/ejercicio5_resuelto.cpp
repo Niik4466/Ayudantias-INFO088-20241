@@ -1,5 +1,5 @@
+#include <ios>
 #include <stack>
-#include <iostream>
 using namespace std;
 
 bool isEmpty(const stack<int> &cola);

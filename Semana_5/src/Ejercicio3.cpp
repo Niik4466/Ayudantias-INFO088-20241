@@ -10,7 +10,6 @@ Pista: al aplicar partition, estamos colocando el elemento del pivote (pv) en su
 es decir, el indice arrojado por partition, es el p elemento menor.
 */
 
-#include <iostream>
 #include <vector>
 #include <random>
 using namespace std;

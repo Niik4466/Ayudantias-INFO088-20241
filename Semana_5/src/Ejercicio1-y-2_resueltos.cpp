@@ -1,4 +1,3 @@
-#include <iostream>
 #include <cstring>
 #include <random>
 #include <vector>
@@ -41,7 +40,7 @@ int binarySearchNombre(vector<Alum> &Alumnos, const string s);
 // A esta definición del main(), se le pueden pasar argumentos
 int main(int argc, char **argv) {
 	if(argc != 2){
-		cout << "Error. Debe ejecutarse como ./alum n" << endl;
+		fputs_unlocked("Error. Debe ejecutarse como ./alum n\n", stdout);
 		exit(EXIT_FAILURE);
 	}
 

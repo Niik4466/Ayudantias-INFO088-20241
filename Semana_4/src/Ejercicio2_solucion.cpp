@@ -1,4 +1,4 @@
-#include <string>
+#include <random>
 using namespace std;
 
 #define MIN 97  //valor mínimo que pueden tomar los carácteres

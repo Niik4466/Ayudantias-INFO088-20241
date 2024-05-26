@@ -1,11 +1,10 @@
-#include <iostream>
 #include "Pila.h"
 
 bool esPalindrome(const string &palabra);
 
 int main(int argc, char** argv) {
     if (argc != 2){
-        cout << "Debe ejecutarse como ./prog2 palabra" << endl;
+        printf("Debe ejecutarse como ./prog2 palabra\n");
         exit(EXIT_FAILURE);
     }
     string palabra = argv[1];
