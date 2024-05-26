@@ -29,14 +29,13 @@ RETO: pueden llenar la función llenaActividadesAleatorio la cual hace lo mismo 
 PD: Pueden modificar las funciones a su gusto, por ejemplo si quieren utilizar arrays :D
 
 */
-
+#include <ios>
 #include <vector>
 #include <stack>
-#include <ios>
 using namespace std;
 
 struct actividad{
-    short int id;
+    int id;
     short int hora_ini;
     short int min_ini;
     short int hora_fin;
