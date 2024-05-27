@@ -1,4 +1,4 @@
-#include <iostream>
+#include <cstdio>
 #include <random>
 using namespace std;
 
@@ -12,11 +12,10 @@ void mediana(int *Vec, const int n);
 int main() {
     //declaramos las variables
     int i=0, n;
-
     //validamos que n no sea menor o igual que 0
-    cout << "Ingrese n: "; cin >> n;
+    printf("Ingrese n: "); scanf("%i", &n);
     while(n < 1){
-        cout << "Error! numero ingresado menor o igual a 0, ingrese un numero positivo: "; cin >> n;
+        printf("Error! numero ingresado menor o igual a 0, ingrese un numero positivo: "); scanf("%i", &n);
     }
 
     //inicialisamos valores
