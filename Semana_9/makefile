@@ -5,9 +5,9 @@ SRCS:=$(wildcard *.cpp)
 BINS:=$(SRCS:%.cpp=bin/%)
 all: pila/Pila ${BINS}
 
-pila/Pila:
+pila/Pila: pila/Pila.cpp
 	echo $(BINS)
-	$(CC) $(CFLAGS) -c pila/Pila.cpp
+	$(CC) $(CFLAGS) -c $<
 
 bin/%: %.cpp
 	$(CC) $(CFLAGS) -o $@ Pila.o $<
