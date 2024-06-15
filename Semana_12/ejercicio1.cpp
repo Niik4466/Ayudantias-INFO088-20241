@@ -27,35 +27,35 @@ struct nodoQ{
 };
 
 //Función que crea el arreglo de nodos
-void makeArray(nodoF** nodoArray);
+void makeArray(vector<nodoF*> &nodoArray);
 
 //Función que imprime el arreglo nodoArray
-void printArray(nodoF** nodoArray);
+void printArray(vector<nodoF*> &nodoArray);
 
 //Función que en base a un arreglo de nodos con puntero al padre crea un árbol binario
-void toBinaryTree(nodoF** nodoArray, nodoQ** root);
+void toBinaryTree(vector<nodoF*> &nodoArray, nodoQ** root);
 
 int main(int argc, char** argv){
-    nodoF** nodoArray = new nodoF*[N];
+    vector<nodoF*> nodoArray(N);
     makeArray(nodoArray);
     printArray(nodoArray);
     nodoQ* root = nullptr;
 
 }
 
-void toBinaryTree(nodoF** nodoArray, nodoQ** root){
+void toBinaryTree(vector<nodoF*> &nodoArray, nodoQ** root) {
     //podemos armarlo desde arriba hacia abajo recursivamente para cada sub arbol
-
+    return;
 }
 
-void makeArray(nodoF **nodoArray){
+void makeArray(vector<nodoF*> &nodoArray) {
     nodoF* q;
     
     //Creamos los nodos del arreglo nodoArray
     for (int i = 0; i < N; ++i){
         q = new nodoF();
         q->val = rand() % MAX;
-        nodoArray[i] = q;
+        nodoArray.at(i) = q;
     }
 
     //Creamos las uniones a mano (quería hacerlo random pero no tuve tiempo para implementarlo bien:c)
@@ -64,21 +64,21 @@ void makeArray(nodoF **nodoArray){
     //Para poder armar un árbol único en base a este bósque, entonces debemos ir agregando padres al nodo
     //verificando que para cada nodo p al que le agregamos un padre q, el nodo p no exista en el árbol de q.
     //Si existe el nodo p en el árbol de q, entonces q se cambia a un nuevo nodo aleatorio y se vuelve a repetir el proceso (UNION-FIND).
-    nodoArray[0]->father = nodoArray[1];
-    nodoArray[1]->father = nullptr;     //nodo raíz
-    nodoArray[2]->father = nodoArray[3];
-    nodoArray[3]->father = nodoArray[4];
-    nodoArray[4]->father = nodoArray[1];
-    nodoArray[5]->father = nodoArray[4];
-    nodoArray[6]->father = nodoArray[3];
+    nodoArray.at(0)->father = nodoArray.at(1);
+    nodoArray.at(1)->father = nullptr;     //nodo raíz
+    nodoArray.at(2)->father = nodoArray.at(3);
+    nodoArray.at(3)->father = nodoArray.at(4);
+    nodoArray.at(4)->father = nodoArray.at(1);
+    nodoArray.at(5)->father = nodoArray.at(4);
+    nodoArray.at(6)->father = nodoArray.at(3);
 }
 
-void printArray(nodoF** nodoArray){
+void printArray(vector<nodoF*> &nodoArray) {
     for (int i = 0; i < N; ++i){
-        if (nodoArray[i]->father == nullptr)
+        if (nodoArray.at(i)->father == nullptr)
             printf("null\t");
         else
-            printf("%i\t", nodoArray[i]->father->val);
+            printf("%i\t", nodoArray.at(i)->father->val);
     }
     printf("\n");
     for (int i = 0; i < N; ++i){
@@ -89,8 +89,8 @@ void printArray(nodoF** nodoArray){
         printf("|\t");
     }
     printf("\n");
-    for (int i = 0; i < N; ++i){
-        printf("%i\t", nodoArray[i]->val);
+    for (nodoF* nodo : nodoArray){
+        printf("%i\t", nodo->val);
     }
     printf("\n");
 }
