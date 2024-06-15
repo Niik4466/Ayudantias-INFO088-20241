@@ -35,6 +35,10 @@ int main(int argc, char** argv){
     llenaArbol(&root);
 }
 
+void imprimeArbol(nodoTree **root) {
+    return;
+}
+
 void llenaArbol(nodoTree **root){
     *root = new nodoTree();
     (*root)->val = 'I';
@@ -70,8 +74,4 @@ void llenaArbol(nodoTree **root){
     (*root)->der->der->der->izq->val = 'X';
     (*root)->der->der->der->der = new nodoTree();
     (*root)->der->der->der->der->val = 'D';
-}
-
-void imprimeArbol(nodoTree **root) {
-    return;
 }
