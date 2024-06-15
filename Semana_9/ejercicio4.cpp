@@ -13,6 +13,7 @@ Puede usar otra Pila de apoyo.
 */
 
 #include <stack>
+#include<ios>
 using namespace std;
 
 #define MIN 10

@@ -1,30 +1,17 @@
+.PHONY = all clean
 CC=g++
 CFLAGS=-std=c++23 -Ofast -Wall -Wextra -Wconversion -Wdouble-promotion -Wduplicated-cond -Wfatal-errors -Wfloat-equal -Wformat=2 -Wlogical-op -Wpedantic -Wshadow -Wundef -Wno-unused-parameter
-BINS=bin/prog1 bin/prog2 bin/prog3 bin/prog4 bin/prog5
-all: clean problema
+SRCS:=$(wildcard *.cpp)
+BINS:=$(SRCS:%.cpp=bin/%)
+all: pila/Pila ${BINS}
 
-problema: pila ejercicio1 ejercicio2 ejercicio3 ejercicio4 ejercicio5
+pila/Pila:
+	echo $(BINS)
+	$(CC) $(CFLAGS) -c pila/Pila.cpp
 
-pila:
-	$(CC) $(CFLAGS) -c Pila.cpp
-
-ejercicio1: pila
-	$(CC) $(CFLAGS) -o bin/prog1 Pila.o ejercicio1.cpp
-
-ejercicio2: pila
-	$(CC) $(CFLAGS) -o bin/prog2 Pila.o ejercicio2_resuelto.cpp
-
-ejercicio3: pila
-	$(CC) $(CFLAGS) -o bin/prog3 Pila.o ejercicio3_resuelto.cpp
-
-ejercicio4: pila
-	$(CC) $(CFLAGS) -o bin/prog4 Pila.o ejercicio4_resuelto.cpp
-
-ejercicio5: pila
-	$(CC) $(CFLAGS) -o bin/prog5 Pila.o ejercicio5_resuelto.cpp
-
-
+bin/%: %.cpp
+	$(CC) $(CFLAGS) -o $@ Pila.o $<
 
 clean:
 	@echo " [CLN] Removing binary files"
-	@rm -f $(BINS)
+	@rm -f ${BINS} *.o

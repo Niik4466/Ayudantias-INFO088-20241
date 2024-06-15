@@ -1,9 +1,10 @@
+.PHONY = all clean
 CC=g++
 CFLAGS=-std=c++23 -Ofast -Wall -Wextra -Wconversion -Wdouble-promotion -Wduplicated-cond -Wfatal-errors -Wfloat-equal -Wformat=2 -Wlogical-op -Wpedantic -Wshadow -Wundef -Wno-unused-parameter
 BINS=prog
-all: clean problema
+all: clean prog
 
-problema:
+prog: 
 	$(CC) $(CFLAGS) -o $(BINS) ejercicio1.cpp
 
 clean:

@@ -7,7 +7,7 @@ de la clase "Pila" en el archivo pila.h, la cual almacena caracteres y se compor
 en el Main() se proporciona una prueba simple para corroborar que los métodos sean correctos
 */
 
-#include "Pila.h"
+#include "pila/Pila.h"
 using namespace std;
 
 int main(int argc, char** argv) {
