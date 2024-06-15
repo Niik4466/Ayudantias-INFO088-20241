@@ -1,11 +1,12 @@
 .PHONY = all clean
 CC=g++
-CFLAGS=-std=c++23 -Ofast -Wall -Wextra -Wconversion -Wdouble-promotion -Wduplicated-cond -Wfatal-errors -Wfloat-equal -Wformat=2 -Wlogical-op -Wpedantic -Wshadow -Wundef -Wno-unused-parameter
-BINS=prog
-all: clean prog
+CFLAGS=-std=c++23 -Ofast -Wall -Wextra -Wconversion -Wdouble-promotion -Wduplicated-cond -Wfatal-errors -Wfloat-equal -Wformat=2 -Wlogical-op -Wpedantic -Wshadow -Wundef -Wno-unused-parameter -Wno-unused-result
+BINS=bin/prog
 
-prog: 
-	$(CC) $(CFLAGS) -o $(BINS) ejercicio1.cpp
+all: clean $(BINS)
+
+bin/%: ejercicio3.cpp
+	$(CC) $(CFLAGS) -o $@ $<
 
 clean:
 	@echo " [CLN] Removing binary files"

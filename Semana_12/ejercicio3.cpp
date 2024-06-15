@@ -22,20 +22,9 @@ struct node{
     int val;
 };
 
-// Función para agregar un elemento al BST
-void llenaBST(node **root, int elem){
-    if (root == nullptr){
-        (*root) = new node();
-        (*root)->val = elem;
-    }
-    else if ((*root)->val < elem){
-        llenaBST(&(*root)->izq, elem);
-    }else
-        llenaBST(&(*root)->der, elem);
-}
-
-// Función que transforma un BST a un Array
-void transformaArray(node* root, vector<int> BSA /*más argumentos que necesiten*/);
+void llenaBST(node **root, int elem); // Función para agregar un elemento al BST
+void transformaArray(node* root, vector<int> BSA /*más argumentos que necesiten*/); // Función que transforma un BST a un Array
+void print_tree(node *root);
 
 // Función que suma si se mueve a la izquierda y reste si se mueve a la derecha
 void sumBSA(vector<int> BSA /*más argumentos que necesiten*/);
@@ -48,10 +37,12 @@ int main() {
     for (int i = 0; i < N; ++i) {
         llenaBST(&root, rand()%MAX);
     }
+    print_tree(root);
+    printf("\n");
 
     // Calculamos el tamaño del Array
     int max=0;
-    for (int i = 0; i<N; i/2) {
+    for (int i = 0; i<N; ++i) {
         max = max*2+2;
     }
 
@@ -64,4 +55,23 @@ void transformaArray(node* root, vector<int> BSA) {
 
 void sumBSA(vector<int> BSA) {
     return;
+}
+
+void llenaBST(node **root, int elem){
+    if (*root == nullptr){
+        (*root) = new node();
+        (*root)->val = elem;
+    }
+    else if ((*root)->val < elem){
+        llenaBST(&(*root)->izq, elem);
+    }else
+        llenaBST(&(*root)->der, elem);
+}
+
+void print_tree(node *root) {
+    if(root == NULL)
+        return;
+    print_tree(root->izq);
+    printf("%d ", root->val);
+    print_tree(root->der);
 }
