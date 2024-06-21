@@ -4,14 +4,13 @@ CFLAGS=-std=c++23 -Ofast -Wall -Wextra -Wconversion -Wdouble-promotion -Wduplica
 SRCS:=$(wildcard *.cpp)
 BINS:=$(SRCS:%.cpp=bin/%)
 
-all: pila/Pila ${BINS}
-
-pila/Pila: pila/Pila.cpp
-	echo $(BINS)
-	$(CC) $(CFLAGS) -c $<
+all: pila/Pila.o ${BINS}
 
 bin/%: %.cpp
-	$(CC) $(CFLAGS) -o $@ Pila.o $<
+	$(CC) $(CFLAGS) -o $@ pila/Pila.o $<
+
+pila/Pila.o: pila/Pila.cpp
+	$(CC) $(CFLAGS) -o $@ -c $<
 
 clean:
 	@echo " [CLN] Removing binary files"
