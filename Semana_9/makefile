@@ -14,4 +14,4 @@ pila/Pila.o: pila/Pila.cpp
 
 clean:
 	@echo " [CLN] Removing binary files"
-	@rm -f ${BINS} *.o
+	@rm -f ${BINS} pila/*.o
